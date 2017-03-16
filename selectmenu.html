@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<p>
+		<select name="e_1973" id="e_1973">
+							 <option value="" dselected="selected">選択してください</option>
+							 <option value="200">1月2日（土）11:00～＜個別指導コース希望者向け説明会＞</option>
+							 <option value="202">12月1日（日）14:00～＜受験対策コース希望者向け説明会＞</option>
+							 <option value="203">1月12日（水）19:30～＜受験対策コース希望者向け説明会＞</option>
+							 <option value="204">11月1日（土）11:00～＜個別指導コース希望者向け説明会＞</option>
+							 <option value="206">1月11日（日）14:00～＜個別指導コース希望者向け説明会＞</option>
+							 <option value="113">web説明会を希望 (全日コース希望)</option>
+					 </select>
+	</p>
+	<p>
+		<input type="text" name="" value="" id="date">
+	</p>
+	<!-- <script type="text/javascript" src="//code.jquery.com/jquery-3.1.1.min.js"></script> -->
+	<script type="text/javascript">
+		$(function() {
+			$("#e_1973").on('change', function() {
+				var selectedText = $("#e_1973 option:selected").text();
+				selectedText = "2017年" + selectedText;
+				var date = selectedText.match(/(\d+)年(\d+)月(\d+)日/);
+				var year = date[1];
+				var month = ("0" + date[2]).slice(-2);
+				var day = ("0" + date[3]).slice(-2);
+
+				$('#date').val(year + month + day);
+			});
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth()+1;
+var day = date.getDate();
+
+
+var bbb = Math.floor(Math.random()* 1000);
+console.log(bbb);
+var ccc = year.toString()+month.toString()+day.toString()+":"+bbb;
+alert(ccc);
+document.getElementById("e_3020").value = ccc;
+		});
+	</script>
+</body>
+
+</html>
